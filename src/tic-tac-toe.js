@@ -37,15 +37,15 @@ class TicTacToe {
         const column3 = [this.matrix[0][2], this.matrix[1][2], this.matrix[2][2]].join('');
         const leftDiagonal = [this.matrix[0][0], this.matrix[1][1], this.matrix[2][2]].join('');
         const rightDiagonal = [this.matrix[0][2], this.matrix[1][1], this.matrix[2][0]].join('');
-
-        if (row1 === 'xxx' || row2 === 'xxx' || row3 === 'xxx' || column1 === 'xxx' || column2 === 'xxx' || column3 === 'xxx' || leftDiagonal === 'xxx' || rightDiagonal === 'xxx') {
-            this.winner = "x"
+        const allCombinations = [];
+        allCombinations.push(row1,row2,row3,column1,column2,column3,leftDiagonal,rightDiagonal);
+        if(allCombinations.includes('xxx')){
+            this.winner = 'x';
         }
-        if (row1 === 'ooo' || row2 === 'ooo' || row3 === 'ooo' || column1 === 'ooo' || column2 === 'ooo' || column3 === 'ooo' || leftDiagonal === 'ooo' || rightDiagonal === 'ooo') {
-            this.winner = "o"
+        if(allCombinations.includes('ooo')){
+            this.winner = 'o';
         }
-
-
+        
     }
 
     isFinished() {
